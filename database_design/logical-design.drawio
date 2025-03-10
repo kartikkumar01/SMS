@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.1.0">
+  <diagram name="Page-1" id="mNwJUP2gDjku7MLIbbf8">
+    <mxGraphModel dx="1034" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-1" value="USER" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="150" y="140" width="170" height="200" as="geometry">
+            <mxRectangle x="230" y="100" width="80" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-2" value="User Full Name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-1">
+          <mxGeometry x="25" y="40" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-3" value="User username" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-1">
+          <mxGeometry x="25" y="60" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-4" value="User Password" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-1">
+          <mxGeometry x="30" y="85" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-5" value="User Prior Knowledge of SM" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-1">
+          <mxGeometry y="110" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-6" value="User Balance" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-1">
+          <mxGeometry x="30" y="130" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-7" value="Account Creation time" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-1">
+          <mxGeometry x="10" y="150" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-8" value="SMS DB LOGICAL DESIGN" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-9" value="TRANSACTION" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="330" y="140" width="170" height="210" as="geometry">
+            <mxRectangle x="230" y="100" width="80" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-10" value="Symbol Name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="35" y="30" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-11" value="Transaction Type" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="30" y="70" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-12" value="Transaction amount" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="20" y="130" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-13" value="Company Name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="30" y="50" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-14" value="Transaction Date" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="30" y="160" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-15" value="Transaction Time" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="25" y="180" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-16" value="Quantity" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="50" y="110" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-17" value="Price per share (From api)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-9">
+          <mxGeometry x="5" y="90" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-18" value="Portfolio (purchased)" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="510" y="140" width="170" height="200" as="geometry">
+            <mxRectangle x="230" y="100" width="80" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-19" value="Quantity" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-18">
+          <mxGeometry x="50" y="100" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-20" value="Symbol Name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-18">
+          <mxGeometry x="35" y="50" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-21" value="Invested amount" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-18">
+          <mxGeometry x="30" y="120" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-22" value="Company Name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-18">
+          <mxGeometry x="31" y="74" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LbbeOwMlrQHxMxCEBvj5-23" value="Average Price" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="LbbeOwMlrQHxMxCEBvj5-18">
+          <mxGeometry x="35" y="140" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
