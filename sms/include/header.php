@@ -1,9 +1,9 @@
-<header class="flex items-center justify-between px-5 text-xl dark:bg-secondary-dark dark:text-text-dark">
+<header class="flex items-center justify-between px-5 text-xl bg-bg-light text-text-light dark:bg-secondary-dark dark:text-text-dark">
         <div>
             <img id="logo" src="./img/logo.png" alt="sms logo" class="w-15">
         </div>
         <nav class="flex gap-4">
-            <a href="#" class="hidden sm:block">Sign up</a>
+            <a href="signup.php" class="hidden sm:block">Sign up</a>
             <a href="#" class="hidden sm:block">Portfolio</a>
             <a href="#" class="hidden sm:block">Transactions</a>
             <span id="learnBtn" class="cursor-pointer hidden sm:block relative">

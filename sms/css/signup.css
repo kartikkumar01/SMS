@@ -1,0 +1,56 @@
+
+form{
+  width:95%;
+  max-width:700px;
+  min-width:250px;
+  margin:auto;
+  padding:5vw;
+  background-color:#262644;
+  border-radius:5px;
+}
+legend{
+  padding-left: 15px;
+}
+form#survey-form #warning{
+  font-size:1.4rem;
+}
+form#survey-form input{
+  border:none;
+}
+form#survey-form #name,
+form#survey-form #email,
+form#survey-form #number,
+form#survey-form #dropdown,form#survey-form textarea{
+  display:block;
+  width:100%;
+  padding:.5em;
+  border-radius:5px;
+  font-size:1.6rem;
+  color:gray;
+}
+form#survey-form label{
+  display:block;
+}
+form#survey-form fieldset > label,form#survey-form >section{
+  margin-bottom:1em;
+}
+form#survey-form button{
+margin-top:1em;
+width:100%;
+border:none;
+border-radius:3px;
+padding:.5em 0;
+cursor:pointer;
+background-color:#37af65;
+color:inherit;
+font-size:1.6rem;
+}
+form textarea{
+  min-height:100px;
+  min-width:100%;
+}
+form fieldset{
+  border:.5px solid rgba(119, 87, 87, 0.233);
+  border-radius:5px;
+  box-shadow: 0 0 20px 5px rgb(45, 50, 63);
+}

@@ -8,3 +8,19 @@ html{
 #hamburgerList > a:hover, #learnList > a:hover{
     scale: 1.10;
 }
+
+.make-btn{
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.make-input-good input{
+    padding: 5px 15px;
+    outline: none;
+}
+
+.make-radio-good > *{
+    padding-left:15px;
+    cursor: pointer;
+}
