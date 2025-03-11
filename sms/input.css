@@ -15,4 +15,5 @@
         --color-text-dark: #fff;  /* Text */
         --color-primary-dark: #3F5BD9; /* Primary Accent */
         --color-secondary-dark: #021526; /* Secondary modern ui color */ 
+        --color-hsecondary-dark : #101218; /*except for header and footer*/
 }
