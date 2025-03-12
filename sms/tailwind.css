@@ -6,9 +6,11 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-400: oklch(0.704 0.191 22.216);
+    --color-red-500: oklch(0.637 0.237 25.331);
     --color-red-600: oklch(0.577 0.245 27.325);
+    --color-red-700: oklch(0.505 0.213 27.518);
     --color-green-600: oklch(0.627 0.194 149.214);
-    --color-blue-300: oklch(0.809 0.105 251.813);
     --color-gray-700: oklch(0.373 0.034 259.733);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -17,7 +19,7 @@
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
     --radius-sm: 0.25rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -198,12 +200,6 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
-  }
-  .mb-20 {
-    margin-bottom: calc(var(--spacing) * 20);
-  }
   .block {
     display: block;
   }
@@ -336,19 +332,28 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-blue-300 {
-    color: var(--color-blue-300);
-  }
   .text-link {
     color: var(--color-link);
+  }
+  .text-red-400 {
+    color: var(--color-red-400);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
   }
   .text-text-dark {
     color: var(--color-text-dark);
@@ -406,6 +411,16 @@
   .dark\:bg-secondary-dark {
     &:where(.dark, .dark *) {
       background-color: var(--color-secondary-dark);
+    }
+  }
+  .dark\:text-red-400 {
+    &:where(.dark, .dark *) {
+      color: var(--color-red-400);
+    }
+  }
+  .dark\:text-red-500 {
+    &:where(.dark, .dark *) {
+      color: var(--color-red-500);
     }
   }
   .dark\:text-text-dark {
