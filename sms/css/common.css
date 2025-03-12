@@ -24,3 +24,7 @@ html{
     padding-left:15px;
     cursor: pointer;
 }
+
+.fa-window-close{
+    cursor: pointer;
+}

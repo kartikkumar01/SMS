@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/signup.css">
     <?php include("include/head-links.php"); ?>
 </head>
-<body class="text-text-light dark:bg-hsecondary-dark dark:text-text-dark p-0.5">
+<body class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
     <?php include("include/header.php"); ?>
     <main >
     <h1 class="text-center text-xl font-semibold my-5">Sign Up on SMS <i class="fa-solid fa-database"></i></h1>

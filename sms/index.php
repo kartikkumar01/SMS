@@ -6,7 +6,7 @@
     <?php include('include/head-links.php'); ?>
 </head>
 
-<body  class="dark:bg-hsecondary-dark dark:text-text-dark">
+<body  class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
     <?php include('include/header.php'); ?>
     <main>
         <!-- landing section -->
@@ -17,8 +17,8 @@
 
         <!-- search any stock feature -->
          <h2>Search Any Stock here</h2>
-         <form method="GET" action="#" class="border w-fit p-3 flex gap-3 rounded-sm">
-           <input type="search" placeholder="Search Ex- AAPL" class="outline-none w-50">
+         <form method="GET" action="#" class="border w-[95%] m-auto max-w-[300px] p-3 flex rounded-sm justify-between">
+           <input type="search" placeholder="Search Ex- AAPL" class="outline-none w-full">
            <button class="cursor-pointer"><i class="fa-solid fa-search"></i></button>
          </form>
          <!-- search popup -->
