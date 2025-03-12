@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <title>Your Portfolio</title>
     <?php include('include/head-links.php') ?>
