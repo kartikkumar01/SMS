@@ -1,7 +1,10 @@
-<header class="flex items-center justify-between px-5 text-xl bg-bg-light text-text-light dark:bg-secondary-dark dark:text-text-dark">
+<header class="flex items-center justify-between px-5 text-body-desktop bg-bg-light text-text-light dark:bg-secondary-dark dark:text-text-dark">
+    <!-- This is left div for the logo -->
         <div>
-            <img id="logo" src="./img/logo.png" alt="sms logo" class="w-15">
+            <a href="/sms/sms"><img id="logo" src="./img/logo.png" alt="sms logo" class="w-15"></a>
         </div>
+
+    <!-- This is the right side navigations     -->
         <nav class="flex items-center gap-4">
             <a href="signup.php" class="hidden sm:block">Sign up</a>
             <a href="portfolio.php" class="hidden sm:block">Portfolio</a>
@@ -20,10 +23,10 @@
             <span class="cursor-pointer"><i class="fa-solid fa-sign-in"></i></span>
             <span id="hamburgerBtn" class="sm:hidden cursor-pointer"><i class="fa-solid fa-bars"></i></span>
         </nav>
-    </header>
+</header>
 
-    <!-- navigations which will expand on clicking hamburger -->
-     <nav id="hamburgerList" class=" dark:bg-secondary-dark shadow shadow-gray-700 dark:text-text-dark transition-all flex flex-col items-center overflow-hidden max-h-0 sm:hidden">
+    <!-- navigations which will expand on clicking hamburger [For Mobiles] -->
+     <nav id="hamburgerList" class=" dark:bg-secondary-dark shadow shadow-gray-700 dark:text-text-dark transition-all flex-col items-center overflow-hidden max-h-0 sm:hidden gap-2 hidden text-body-desktop">
         <a href="signup.php">Sign up</a>
         <a href="portfolio.php">Portfolio</a>
         <a href="sellbuy.php">Buy/Sell</a>

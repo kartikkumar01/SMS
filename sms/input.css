@@ -16,6 +16,16 @@
         --color-primary-dark: #3F5BD9; /* Primary Accent */
         --color-secondary-dark: #021526; /* Secondary modern ui color */ 
         --color-hsecondary-dark : #101218; /*except for header and footer*/
-
         --color-link : oklch(0.809 0.105 251.813);
+
+
+        /* Text size variables */
+        --text-heading-desktop : 36px;
+        --text-subheading-desktop : 30px;
+        --text-body-desktop : 18px;
+        
+        --text-heading-mobile: 28px;
+        --text-subheading-mobile: 24px;
+        --text-body-mobile: 16px;
+        
 }

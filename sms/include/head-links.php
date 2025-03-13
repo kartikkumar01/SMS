@@ -18,4 +18,5 @@
      <link rel="stylesheet" href="css/common.css">
 
      <!-- core javascript -->
-      <script src="js/common.js" defer></script>
+      <script src="js/header.js" defer></script>
+      <script src="js/darkmode.js" defer></script>

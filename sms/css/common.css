@@ -1,9 +1,6 @@
 html{
     font-family: barlow, sans-serif;
 }
-*{
-    transition: all 150ms;
-}
 
 #hamburgerList > a:hover, #learnList > a:hover{
     scale: 1.10;
