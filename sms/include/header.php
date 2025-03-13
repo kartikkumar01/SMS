@@ -1,15 +1,15 @@
 <header class="flex items-center justify-between px-5 text-body-desktop bg-bg-light text-text-light dark:bg-secondary-dark dark:text-text-dark">
     <!-- This is left div for the logo -->
         <div>
-            <a href="/sms/sms"><img id="logo" src="./img/logo.png" alt="sms logo" class="w-15"></a>
+            <a href="/mds/mds"><img id="logo" src="./img/logo.png" alt="mds logo" class="w-15"></a>
         </div>
 
     <!-- This is the right side navigations     -->
         <nav class="flex items-center gap-4">
-            <a href="signup.php" class="hidden sm:block">Sign up</a>
-            <a href="portfolio.php" class="hidden sm:block">Portfolio</a>
-            <a href="transaction.php" class="hidden sm:block">Transactions</a>
-            <span id="learnBtn" class="cursor-pointer hidden sm:block relative">
+            <a href="signup.php" class="hidden md:block">Sign up</a>
+            <a href="portfolio.php" class="hidden md:block">Portfolio</a>
+            <a href="transaction.php" class="hidden md:block">Transactions</a>
+            <span id="learnBtn" class="cursor-pointer hidden md:block relative">
                 Learn <i class="fa-solid fa-angle-down align-middle"></i>
                 <nav id="learnList" class="shadow shadow-gray-700 transition-all flex absolute flex-col items-center max-h-0 bg-bg-light overflow-hidden dark:bg-secondary-dark">
                     <a href="articles.php">Articles</a>
@@ -17,16 +17,16 @@
                     <a href="videos.php">Videos</a>
                  </nav>
             </span>
-            <a href="sellbuy.php" class="cursor-pointer hidden sm:block">Buy/Sell</a>
-            <a href="delete.php" class="cursor-pointer hidden sm:block make-btn border hover:bg-red-600 hover:text-white sm:border-red-700 sm:text-red-700 dark:border-red-500 dark:text-red-500">Delete Account</a>
+            <a href="sellbuy.php" class="cursor-pointer hidden md:block">Buy/Sell</a>
+            <a href="delete.php" class="cursor-pointer hidden md:block make-btn border hover:bg-red-600 hover:text-white md:border-red-700 md:text-red-700 dark:border-red-500 dark:text-red-500">Delete Account</a>
             <span class="cursor-pointer"><i id="darkLightBtn" class="fa-solid fa-moon"></i></span>
             <span class="cursor-pointer"><i class="fa-solid fa-sign-in"></i></span>
-            <span id="hamburgerBtn" class="sm:hidden cursor-pointer"><i class="fa-solid fa-bars"></i></span>
+            <span id="hamburgerBtn" class="md:hidden cursor-pointer"><i class="fa-solid fa-bars"></i></span>
         </nav>
 </header>
 
     <!-- navigations which will expand on clicking hamburger [For Mobiles] -->
-     <nav id="hamburgerList" class=" dark:bg-secondary-dark shadow shadow-gray-700 dark:text-text-dark transition-all flex-col items-center overflow-hidden max-h-0 sm:hidden gap-2 hidden text-body-desktop">
+     <nav id="hamburgerList" class=" dark:bg-secondary-dark shadow shadow-gray-700 dark:text-text-dark transition-all flex-col items-center overflow-hidden max-h-0 md:hidden gap-2 hidden text-body-desktop">
         <a href="signup.php">Sign up</a>
         <a href="portfolio.php">Portfolio</a>
         <a href="sellbuy.php">Buy/Sell</a>
