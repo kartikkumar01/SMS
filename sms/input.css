@@ -23,9 +23,9 @@
         /* Text size variables */
         --text-heading-desktop : 36px;
         --text-subheading-desktop : 30px;
-        --text-body-desktop : 18px;
+        --text-body-desktop : 20px;
         
         --text-heading-mobile: 28px;
         --text-subheading-mobile: 24px;
-        --text-body-mobile: 16px;
+        --text-body-mobile: 18px;
 }
