@@ -1,7 +1,13 @@
 html{
     font-family: barlow, sans-serif;
 }
-
+input::placeholder{
+    color:grey;
+    font-weight: normal;
+}
+input{
+    font-weight: 600;
+}
 #hamburgerList > a:hover, #learnList > a:hover{
     scale: 1.10;
 }

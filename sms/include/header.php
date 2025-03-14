@@ -1,10 +1,14 @@
-<header class="flex items-center justify-between px-5 text-body-desktop bg-bg-light text-text-light dark:bg-secondary-dark dark:text-text-dark">
-    <!-- This is left div for the logo -->
-        <div>
-            <a href="/mds/mds"><img id="logo" src="./img/logo.png" alt="mds logo" class="w-15"></a>
+<header class="text-body-desktop bg-bg-light text-text-light dark:bg-secondary-dark dark:text-text-dark sticky top-0">
+    <div class="flex items-center justify-between px-5">
+        <!-- This is left div for the logo -->
+        <div class="flex items-center gap-5">
+            <a href="/sms/sms"><img id="logo" src="./img/logo.png" alt="mds logo" class="w-15"></a>
+            <div class="border w-fit pr-2 rounded-full hidden md:block">
+                <input type="text" class="outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
+                <button class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
+            </div>
         </div>
-
-    <!-- This is the right side navigations     -->
+        <!-- This is the right side navigations     -->
         <nav class="flex items-center gap-4">
             <a href="signup.php" class="hidden md:block">Sign up</a>
             <a href="portfolio.php" class="hidden md:block">Portfolio</a>
@@ -15,7 +19,7 @@
                     <a href="articles.php">Articles</a>
                     <a href="quiz.php">Play&nbsp;Quiz</a>
                     <a href="videos.php">Videos</a>
-                 </nav>
+                </nav>
             </span>
             <a href="sellbuy.php" class="cursor-pointer hidden md:block">Buy/Sell</a>
             <a href="delete.php" class="cursor-pointer hidden md:block make-btn border hover:bg-red-600 hover:text-white md:border-red-700 md:text-red-700 dark:border-red-500 dark:text-red-500">Delete Account</a>
@@ -23,16 +27,27 @@
             <span class="cursor-pointer"><i class="fa-solid fa-sign-in"></i></span>
             <span id="hamburgerBtn" class="md:hidden cursor-pointer"><i class="fa-solid fa-bars"></i></span>
         </nav>
+    </div>
+        <!-- navigations which will expand on clicking hamburger [For Mobiles] -->
+        <nav id="hamburgerList" class=" dark:bg-secondary-dark shadow shadow-gray-700 dark:text-text-dark duration-500 transition-all flex-col items-center overflow-hidden max-h-0 md:hidden gap-2 text-body-desktop flex">
+            <a href="signup.php">Sign up</a>
+            <a href="portfolio.php">Portfolio</a>
+                <a href="sellbuy.php">Buy/Sell</a>
+                <a href="transaction.php">Transactions</a>
+                <a href="articles.php">Articles</a>
+                <a href="quiz.php">Play Quiz</a>
+                <a href="videos.php">Videos</a>
+                <a href="delete.php">Delete Account</a>
+        </nav>
 </header>
 
-    <!-- navigations which will expand on clicking hamburger [For Mobiles] -->
-     <nav id="hamburgerList" class=" dark:bg-secondary-dark shadow shadow-gray-700 dark:text-text-dark transition-all flex-col items-center overflow-hidden max-h-0 md:hidden gap-2 hidden text-body-desktop">
-        <a href="signup.php">Sign up</a>
-        <a href="portfolio.php">Portfolio</a>
-        <a href="sellbuy.php">Buy/Sell</a>
-        <a href="transaction.php">Transactions</a>
-        <a href="articles.php">Articles</a>
-        <a href="quiz.php">Play Quiz</a>
-        <a href="videos.php">Videos</a>
-        <a href="delete.php">Delete Account</a>
-     </nav>
+
+
+    <div id="overlay" class=" md:hidden fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs hidden"></div>
+    <div id="searchBar" class="duration-500 transition-all md:hidden border pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed top-[20%] left-[50%] translate-x-[-50%] flex scale-0">
+        <input type="text" class="outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
+        <button class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
+    </div>
+    <div id="searchIcon" class="md:hidden border-r-0 w-fit py-1 px-2 rounded-l-2xl fixed right-0 top-100 bg-[#d2cdcd] dark:bg-bg-dark">
+        <i class="fa-solid fa-search"></i>
+    </div>     

@@ -6,13 +6,15 @@
 @theme{
         /* Light Mode Colors */
         --color-bg-light: #fff;   /* Background */
-        --color-text-light: #000; /* Text */
+        --color-text-light: rgb(66, 66, 66); /* Text */
+        
         --color-primary-light: #3F5BD9; /* Primary Accent */
         --color-secondary-light: #2A394E; /* Secondary Accent */
       
         /* Dark Mode Colors */
         --color-bg-dark: #000;    /* Background */
-        --color-text-dark: #fff;  /* Text */
+        --color-text-dark: rgb(230, 230, 230);  /* Text */
+
         --color-primary-dark: #3F5BD9; /* Primary Accent */
         --color-secondary-dark: #021526; /* Secondary modern ui color */ 
         --color-hsecondary-dark : #101218; /*except for header and footer*/
