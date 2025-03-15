@@ -2,26 +2,24 @@
 <html lang="en">
 <head>
     <title>SMS - Login</title>
-    <link rel="stylesheet" href="css/signup.css">
     <?php include("include/head-links.php"); ?>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="js/form.js" defer></script>
 </head>
-<body class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
+<body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
     <main >
-    <h1 class="text-center text-xl font-semibold my-5">Login Here <i class="fa-solid fa-sign-in"></i></h1>
-
-    <form class="text-text-dark sm:text-xl" >
-        <fieldset>
-            <legend>Enter Login Details</legend>
-            <div class="flex flex-col make-input-good gap-5 py-2.5">
-                <input placeholder="Username" type="text" name="username">
-                <input placeholder="Password" type="password" name="password">
-                <input placeholder="Confirm Password" type="password" name="confirmed-password">   
-            </div>
-        </fieldset>
-        <button class="make-btn bg-green-600 block mx-auto my-5">Login</button>
-        <a href="#" class="text-center block underline text-link">Register</a>
-        <a href="#" class="text-center block underline text-link">Forgot Password?</a>
+        
+    <form class="shadow-[0_4px_10px_rgba(0,0,0,0.1),0_2px_4px_rgba(0,0,0,0.06)] 
+        dark:shadow-[0_4px_15px_rgba(0,0,0,0.6),0_2px_6px_rgba(0,0,0,0.3)] transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
+        <h1 class="text-center text-xl font-semibold my-5">Login Here <i class="fa-solid fa-sign-in"></i></h1>
+        <input type="text" placeholder="username" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">
+        <div class="border flex items-center pr-2 rounded-sm focus-within:outline-2 focus-within:border-transparent outline-primary-light">
+            <input id="password" type="password" placeholder="password" class="w-full outline-none">
+            <i id="showHidePasswordBtn" class="cursor-pointer fa-solid fa-eye-slash"></i>
+        </div>
+        <button class="make-btn bg-green-600 text-gray-100 block mx-auto my-5">Log in</button>
+        <a href="signup.php" class="text-center block underline text-link mb-5">Sign up ?</a>
     </form>
     </main>
     <?php include("include/footer.php"); ?>

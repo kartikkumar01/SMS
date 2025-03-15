@@ -15,6 +15,8 @@ learnListOverlay.addEventListener('click',()=>{
 })
 // -------------------learn button ends-----------------
 
+
+
 //----------------hamburger button toggle script starts-------------
 let hamburgerBtn = document.getElementById('hamburgerBtn');
 let hamburgerList = document.getElementById('hamburgerList');
@@ -33,6 +35,8 @@ hamburgerListOverlay.addEventListener('click',()=>{
     hamburgerListOverlay.classList.toggle('hidden');
 })
 //--------------hamburger button toggle script ends-------------
+
+
 
 
 // search bar hide show js in mobile

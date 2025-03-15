@@ -31,3 +31,6 @@ input{
 .fa-window-close{
     cursor: pointer;
 }
+main{
+    min-height: 85vh;
+}
