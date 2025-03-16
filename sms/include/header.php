@@ -3,10 +3,10 @@
         <!-- This is left div for the logo -->
         <div class="flex items-center gap-5">
             <a href="/sms/sms"><img id="logo" src="./img/logo.png" alt="mds logo" class="w-15"></a>
-            <div class="border w-fit pr-2 rounded-full hidden md:block">
+            <!-- <div class="border w-fit pr-2 rounded-full hidden md:block">
                 <input type="text" class="outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
                 <button class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
-            </div>
+            </div> -->
         </div>
         <!-- This is the right side navigations     -->
         <nav class="flex items-center gap-4">
@@ -50,8 +50,8 @@
     <div id="overlay" class="fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs hidden"></div>
 
     <div>
-        <div id="searchBar" class="border duration-500 transition-all md:hidden pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed top-[20%] left-[50%] translate-x-[-50%] flex scale-0 ">
-            <input id="stockSearchBar" type="search" class="outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
+        <div id="searchBar" class="border duration-500 transition-all pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed top-[20%] left-[50%] translate-x-[-50%] flex scale-0 ">
+            <input id="stockSearchBar" type="text" class="rounded-full outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
             <button id="stockSearchBtn" class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
             <p id="validationMessageInMobile" class="rounded-sm text-white bg-red-600 absolute top-[-100%] left-[5%] text-sm"></p>
         </div>
@@ -59,7 +59,7 @@
     <div id="loader" class="loader fixed top-[50%] left-[50%] translate-[-50%]"></div>
 
     <!-- this is the icon at right bottom for the quick access -->
-    <div id="searchIcon" class="block md:hidden border-r-0 w-fit py-1 px-2 rounded-l-2xl fixed right-0 top-100 bg-[#d2cdcd] dark:bg-bg-dark">
+    <div id="searchIcon"  title="Search any stock" class="md:cursor-pointer block border-r-0 w-fit py-1 px-2 rounded-l-2xl fixed right-0 top-100 bg-[#d2cdcd] dark:bg-bg-dark">
         <i class="fa-solid fa-search"></i>
     </div>     
 

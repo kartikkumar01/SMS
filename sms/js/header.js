@@ -62,6 +62,7 @@ overlay.addEventListener('click',()=>{
     hideBothCards();
     toggleBetweenTwoClasses(searchIcon, 'block','hidden');
     stockSearchBar.value = ''
+    validationMessage.textContent = ''
 })
 
 
@@ -108,23 +109,21 @@ const notFoundCard = document.getElementById('notFoundCard')
 const validationMessage = document.getElementById('validationMessageInMobile')
 
 stockSearchBar.addEventListener('input',()=>{
-    // validate the user input do not contain numbers and special characters
+    hideBothCards()
     const input = stockSearchBar.value;
-    if(input.search(/[0-9]/) != -1){
-        validationMessage.textContent= 'Do not include numbers'
-        stockSearchBtn.setAttribute('disabled','true')
-    }else if(input.search(/[!@#$%^&*()]/) != -1){
-        validationMessage.textContent= 'Do not include special characters'
+    
+    // validate the user input if anything entered other than letters
+    if(input.search(/[^a-zA-Z]/g) != -1){
+        validationMessage.textContent= 'Only letters are allowed'
         stockSearchBtn.setAttribute('disabled','true')
     }else if(input.length > 8){
-        validationMessage.textContent= 'Symbol length is too long'
+        validationMessage.textContent= 'Length is too long'
         stockSearchBtn.setAttribute('disabled','true')
     }else{
         validationMessage.textContent= ''
         stockSearchBtn.removeAttribute('disabled')
     }
 })
-
 const loader = document.getElementById('loader');
 
 stockSearchBtn.addEventListener('click',()=>{ 
@@ -132,6 +131,7 @@ stockSearchBtn.addEventListener('click',()=>{
     if(stockSearchBar.value == ''){
         validationMessage.textContent= 'Input cannot be empty'
         stockSearchBtn.setAttribute('disabled','true')
+        hideBothCards()
     }else{
         //if ok then start loading animation 
         loader.style.display = "block";
@@ -149,7 +149,7 @@ function showcard(card){
 }
 function fetchStockDetailsForMobile(){
     hideBothCards()
-    symbol = stockSearchBar.value;
+    symbol = stockSearchBar.value.trim();
     fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${apiKey}`)
     .then((response) => response.json())
     .then((data)=>{
@@ -183,4 +183,18 @@ function fetchStockDetailsForMobile(){
 }
 
 
-//-------------- This code is of the stock search bar api for mobile ----------------------
+//-------------- This code is of the stock search bar api for DESKTOP ----------------------
+stockSearchBar.addEventListener('keyup',(e)=>{ 
+    if(e.key == 'Enter'){
+        if(validationMessage.innerText == '' && stockSearchBar.value != ''){
+                //if ok then start loading animation 
+                loader.style.display = "block";
+                //then send request
+                fetchStockDetailsForMobile()
+        }else if(stockSearchBar.value == ''){
+            validationMessage.textContent= 'Input cannot be empty'
+            stockSearchBtn.setAttribute('disabled','true')
+            hideBothCards()
+        }
+    }
+})

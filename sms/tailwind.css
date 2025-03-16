@@ -834,6 +834,11 @@
       max-width: 280px;
     }
   }
+  .md\:cursor-pointer {
+    @media (width >= 48rem) {
+      cursor: pointer;
+    }
+  }
   .md\:flex-col {
     @media (width >= 48rem) {
       flex-direction: column;
