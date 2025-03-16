@@ -10,8 +10,7 @@
     <?php include("include/header.php"); ?>
     <main >
         
-    <form class="shadow-[0_4px_10px_rgba(0,0,0,0.1),0_2px_4px_rgba(0,0,0,0.06)] 
-        dark:shadow-[0_4px_15px_rgba(0,0,0,0.6),0_2px_6px_rgba(0,0,0,0.3)] transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
+    <form class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
         <h1 class="text-center text-xl font-semibold my-5">Login Here <i class="fa-solid fa-sign-in"></i></h1>
         <input type="text" placeholder="username" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">
         <div class="border flex items-center pr-2 rounded-sm focus-within:outline-2 focus-within:border-transparent outline-primary-light">

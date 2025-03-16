@@ -9,8 +9,7 @@
 <body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
     <main >
-        <form class="shadow-[0_4px_10px_rgba(0,0,0,0.1),0_2px_4px_rgba(0,0,0,0.06)] 
-        dark:shadow-[0_4px_15px_rgba(0,0,0,0.6),0_2px_6px_rgba(0,0,0,0.3)] transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
+        <form class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
         <h1 class="text-center text-xl font-semibold mt-5">Delete Your Account Permanantly <i class="fa-solid fa-trash"></i></h1>
         <p class="text-center text-red-700 dark:text-red-500 font-semibold mb-5">NOTE: This action is irreversible!!</p>
         <input type="text" placeholder="username" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">

@@ -46,12 +46,33 @@
 </header>
 
 
-
+    <!-- ----------MOBILE DEVICE SEARCH BAR------------ -->
     <div id="overlay" class="fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs hidden"></div>
-    <div id="searchBar" class="duration-500 transition-all md:hidden border pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed top-[20%] left-[50%] translate-x-[-50%] flex scale-0">
-        <input type="text" class="outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
-        <button class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
+
+    <div>
+        <div id="searchBar" class="border duration-500 transition-all md:hidden pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed top-[20%] left-[50%] translate-x-[-50%] flex scale-0 ">
+            <input id="stockSearchBar" type="search" class="outline-none py-1 w-[200px] text-center" placeholder="Ex - AAPL">
+            <button id="stockSearchBtn" class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
+            <p id="validationMessageInMobile" class="rounded-sm text-white bg-red-600 absolute top-[-100%] left-[5%] text-sm"></p>
+        </div>
     </div>
-    <div id="searchIcon" class="md:hidden border-r-0 w-fit py-1 px-2 rounded-l-2xl fixed right-0 top-100 bg-[#d2cdcd] dark:bg-bg-dark">
+    <div id="loader" class="loader fixed top-[50%] left-[50%] translate-[-50%]"></div>
+
+    <!-- this is the icon at right bottom for the quick access -->
+    <div id="searchIcon" class="block md:hidden border-r-0 w-fit py-1 px-2 rounded-l-2xl fixed right-0 top-100 bg-[#d2cdcd] dark:bg-bg-dark">
         <i class="fa-solid fa-search"></i>
     </div>     
+
+
+
+         <!-- search popups -->
+         <div id="stockInfoCard" class="transition-all scale-0 flex shadow-box-light dark:shadow-box-dark
+ w-[70%] max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[35%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+            <img id="stockImage" src="" alt="stock image" class="rounded-full block w-[50%] m-auto" >
+            <p id="symbolName" class="text-center"></p>
+            <p id="companyName" class="text-center"></p>
+            <p class="text-center">$<span  id="stockPrice"></span></p>
+         </div>
+         <div id="notFoundCard" class="shadow-box-light dark:shadow-box-dark transition-all scale-0 text-center w-[150px] flex flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[35%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+            <p>No Stock Found!!</p>
+         </div>

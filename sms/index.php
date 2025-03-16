@@ -20,20 +20,7 @@
                 <a href="signup.php" class="w-fit make-btn bg-green-600 text-gray-100 block mx-auto my-5">Sign Up</a>
             </div>
         </div>
-
-
-        <!-- ------landing section ends-------- -->
-         <!-- search popup -->
-         <!-- <div class="border w-[150px] flex flex-col items-center justify-center gap-2 p-4 rounded-sm">
-            <p>AAPL</p>
-            <p>Apple co.in</p>
-            <p>$150.44</p>
-            <button type="button" class="bg-red-600 text-white make-btn">Close</button>
-         </div> -->
-         <!-- <div class="text-center border w-[150px] flex flex-col items-center justify-center gap-2 p-4 rounded-sm">
-            <p>No Stock Found!!</p>
-            <button type="button" class="bg-red-600 text-white make-btn">Close</button>
-         </div> -->
+            <!-- ------landing section ends-------- -->
 
         <!-- virtual money and investing showcase -->
         <section class="w-[95%] mx-auto my-5">

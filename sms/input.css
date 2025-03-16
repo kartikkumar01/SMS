@@ -28,4 +28,9 @@
         --text-heading-mobile: 28px;
         --text-subheading-mobile: 24px;
         --text-body-mobile: 18px;
+
+
+        /* box shadow variables for light and dark mode */
+        --shadow-box-light : 0 4px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+        --shadow-box-dark : 0 4px 15px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
 }

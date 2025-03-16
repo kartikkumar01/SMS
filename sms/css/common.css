@@ -34,3 +34,20 @@ input{
 main{
     min-height: 85vh;
 }
+
+/* loader css */
+.loader {
+    display: none;
+    width: 24px; /* Reduced width */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+        radial-gradient(farthest-side, #ffcc00 94%, #0000) top/6px 6px no-repeat, 
+        conic-gradient(#0000 30%, #00eaff); /* Improved colors */
+  
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 6px), #000 0);
+    animation: l13 250ms infinite linear; /* Faster animation */
+}
+@keyframes l13 { 
+    100% { transform: rotate(1turn); }
+}
