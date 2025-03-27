@@ -8,7 +8,7 @@
 
 
 <!-- Loader which appears while fetching the data from the finnhub api -->
-<div id="loader" class="loader fixed top-[50%] left-[50%] translate-[-50%]"></div>
+<div id="loader" class="z-[500] loader fixed top-[50%] left-[50%] translate-[-50%]"></div>
 
 <!-- This is the icon at right bottom for the quick access -->
 <div id="searchIcon"  title="Search any stock" class="md:cursor-pointer block border-r-0 w-fit py-1 px-2 rounded-l-2xl fixed right-0 top-100 bg-[#d2cdcd] dark:bg-bg-dark">

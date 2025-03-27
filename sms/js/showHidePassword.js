@@ -2,14 +2,14 @@
 
 //----------------toggle between show and hide password starts------------------
 let showHidePasswordBtn = document.getElementById('showHidePasswordBtn');
-let password = document.getElementById('password');
+let pass = document.getElementById('password');
 
 showHidePasswordBtn.addEventListener('click', () => {
     toggleBetweenTwoClasses(showHidePasswordBtn,'fa-eye-slash','fa-eye');
     if(showHidePasswordBtn.classList.contains('fa-eye')){
-        password.type = 'text';
+        pass.type = 'text';
     }else{
-        password.type = 'password';
+        pass.type = 'password';
     }
 })
 //----------------toggle between show and hide password ends------------------
