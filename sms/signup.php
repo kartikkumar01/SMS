@@ -9,7 +9,7 @@
 </head>
 <body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
-    <?php include("include/stocks-search-feature.php") ?>
+    <?php include("include/stocks-search-feature.php"); ?>
 
 <main>
     <?php include('include/messageBoxes.php'); ?>

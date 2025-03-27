@@ -8,7 +8,7 @@ try{
     $con = mysqli_connect($host, $username, $password, $dbname);
 }catch(Exception $e){
     //my created function which creates array and converts it into JSON
-    echo response(false,'ERROR : Signup Failed !');
+    echo response(false,'Signup Failed !');
     exit;
 }
 ?>

@@ -31,14 +31,29 @@ if($_POST['password'] == ''){
 //It will come mandatory so no need to check
 $prior_experience = $_POST['prior_experience'];
 
-//Insert the data into the database
+
+//Check for the existing user in the database
+$fetchQuery = "SELECT * FROM user WHERE username = '$username'";
+try{
+    $table = mysqli_query($con,$fetchQuery);
+}catch(Exception $e){
+    echo response(false,'Signup Failed !');
+    exit;
+}
+$row = mysqli_fetch_assoc($table);
+if($row){
+    echo response(false,'User already exists !');
+    exit;
+}
+
+
+//Insert the user into the database
 $insertQuery = "INSERT INTO user (fullname, username, password, prior_experience) VALUES ('$fullname', '$username', '$password', '$prior_experience')";
 try{
     mysqli_query($con, $insertQuery);
     echo response(true,'Signed up sucessfully');
 }catch(Exception $e){
-    //Exception will only come if duplicate entry is found in database bcz username is unique key
-    echo response(false,'User already exists');
+    echo response(false,'Signup Failed !');
     exit;
 }
 ?>
