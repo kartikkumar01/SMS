@@ -1,7 +1,7 @@
-<?php include('include/response_function.php'); ?>
+<?php include('../include/response_function.php'); ?>
 <?php 
 //Establish the connection with database
-include('include/connect_db.php');
+include('../include/connect_db.php');
 
 //Fetch the incoming data while validating
 if($_POST['fullname'] == ''){

@@ -46,7 +46,7 @@ const loader = document.getElementById('loader');
 
 
 //I will fetch it from backend
-const apiKey = 'cvbd131r01qob7ucsnf0cvbd131r01qob7ucsnfg';
+const apiKey = 'cvijhvhr01qks9qat1u0cvijhvhr01qks9qat1ug';
 let symbol;
 
 // validate the user input
@@ -103,8 +103,7 @@ function showcard(card){
 
 function fetchStockDetails(){
     hideBothCards()
-    symbol = stockSearchBar.value.trim();
-
+    symbol = stockSearchBar.value.trim().toUpperCase();
     fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`)
     .then((response) => response.json())
     .then((data)=>{

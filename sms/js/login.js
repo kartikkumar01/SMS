@@ -1,10 +1,8 @@
-const signupForm = document.getElementById('signupForm');
+const loginForm = document.getElementById('loginForm');
 const clientErrMsgBox = document.getElementById('clientValidationError')
-const fullname = document.getElementById('fullname')
 const username = document.getElementById('username')
 const password = document.getElementById('password')
-const confirmPassword = document.getElementById('confirmPassword')
-const signupOverlay = document.getElementById('signupOverlay')
+const loginOverlay = document.getElementById('loginOverlay')
 const trueMsgBox = document.getElementById('trueMessageBox')
 const falseMsgbox = document.getElementById('falseMessageBox')
 
@@ -12,34 +10,26 @@ const falseMsgbox = document.getElementById('falseMessageBox')
 let flag = false
 
 //These two event listeners are to clear the error message if user types again
-signupForm.addEventListener('input', () => showClientMessage(''))
+loginForm.addEventListener('input', () => showClientMessage(''))
 
 //Listens the form submit event
-signupForm.addEventListener('submit',(e) => {
+loginForm.addEventListener('submit',(e) => {
     e.preventDefault() 
     clientSideValidation() //Make the flag true if everything is fine
     if(flag == true) ajaxReq()
 })
 
 function clientSideValidation(){
-    if (fullname.value == '') {
-        showClientMessage('Full name is empty');
-    } else if (fullname.value.search(/[^a-zA-Z\s]/g) != -1) {
-        showClientMessage('Full name can only contain letters');
-    } else if (username.value == '') {
+    if (username.value == '') {
         showClientMessage('Username is empty');
     } else if (password.value == '') {
         showClientMessage('Password is empty');
-    } else if (confirmPassword.value == '') {
-        showClientMessage('Please confirm the password');
-    } else if (password.value != confirmPassword.value) {
-        showClientMessage('Passwords do not match');
-    } else {
+    }else {
         flag = true;
         showClientMessage(''); // Clear error if everything is valid
     }
-    
 }
+
 function showClientMessage(message){
     clientErrMsgBox.textContent = message
 }
@@ -61,21 +51,22 @@ function showServerMessage(status,message){
 }
 
 function ajaxReq(){
-const formdata = new FormData(signupForm)
+const formdata = new FormData(loginForm)
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function (){
-    signupOverlay.style.display = 'block'
+    loginOverlay.style.display = 'block'
     showLoader()
     if(xhr.readyState == xhr.DONE && xhr.status == 200){
-        signupOverlay.style.display = 'none'
+        loginOverlay.style.display = 'none'
         hideLoader()
         const response = JSON.parse(xhr.responseText)
         if(response.status == true){
-            signupForm.reset()
+            //Redirecting the user after sucessfull login
+            window.location.href = './portfolio.php';
         }
         showServerMessage(response.status, response.message)
     }
 }
-xhr.open('POST', './api/signup_submit.php');
+xhr.open('POST', './api/login_submit.php');
 xhr.send(formdata);
 }

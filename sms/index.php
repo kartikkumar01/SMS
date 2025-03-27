@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('include/redirect_if_login.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
