@@ -60,7 +60,7 @@
         <?php
             if(isset($_SESSION['user_id'])){
                 ?>
-                    <span class="cursor-pointer"><i class="fa-solid fa-sign-in"></i></span>
+                    <span title="Log out" id="logoutBtn" class="cursor-pointer"><i class="fa-solid fa-sign-out"></i></span>
                 <?php
             }
         ?> 

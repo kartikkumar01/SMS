@@ -1,4 +1,4 @@
-const loginForm = document.getElementById('loginForm');
+const loginForm = document.getElementById('loginForm')
 const clientErrMsgBox = document.getElementById('clientValidationError')
 const username = document.getElementById('username')
 const password = document.getElementById('password')
@@ -20,6 +20,7 @@ loginForm.addEventListener('submit',(e) => {
 })
 
 function clientSideValidation(){
+    flag = false;
     if (username.value == '') {
         showClientMessage('Username is empty');
     } else if (password.value == '') {
@@ -39,13 +40,13 @@ function showServerMessage(status,message){
         trueMsgBox.textContent = message;
         setTimeout(() => {
             trueMsgBox.style.display = 'none';
-        }, 3000);
+        }, 4000);
     }else{
         falseMsgbox.style.display = 'block';
         falseMsgbox.textContent = message;
         setTimeout(() => {
             falseMsgbox.style.display = 'none';
-        }, 3000);
+        }, 4000);
 
     }
 }
@@ -60,11 +61,13 @@ xhr.onreadystatechange = function (){
         loginOverlay.style.display = 'none'
         hideLoader()
         const response = JSON.parse(xhr.responseText)
+        showServerMessage(response.status, response.message)
         if(response.status == true){
             //Redirecting the user after sucessfull login
-            window.location.href = './portfolio.php';
+            setTimeout(() => {
+                window.location.href = './portfolio.php';
+            }, 1000);
         }
-        showServerMessage(response.status, response.message)
     }
 }
 xhr.open('POST', './api/login_submit.php');

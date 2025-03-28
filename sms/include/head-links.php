@@ -22,3 +22,11 @@
 <script src="js/header.js" defer></script>
 <script src="js/darkmode.js" defer></script>
 <script src="js/stockSearchFeature.js" defer></script>
+
+<?php
+if(isset($_SESSION['user_id'])){
+?>
+    <script src="js/logout.js" defer></script>
+    <?php
+}
+?>

@@ -1,16 +1,33 @@
+
+
 // search bar hide show js in mobile
 const searchIcon = document.getElementById('searchIcon');
+//this is input + icon
 const searchBar = document.getElementById('searchBar');
 const overlay = document.getElementById('overlay');
+
+// these are two parts of search bar
+const stockSearchBtn = document.getElementById('stockSearchBtn')
+const stockSearchBar = document.getElementById('stockSearchBar')
 
 searchIcon.addEventListener(('click'), ()=>{
     toggleBetweenTwoClasses(overlay, 'flex','hidden');
     toggleBetweenTwoClasses(searchBar,'scale-0','scale-100');
+    stockSearchBar.focus()
     hideBothCards();
     stockSearchBar.value = ''
     toggleBetweenTwoClasses(searchIcon, 'block','hidden');
 })
-
+window.addEventListener('keyup',(e)=>{
+    if(e.key == 'Control'){
+        toggleBetweenTwoClasses(overlay, 'flex','hidden');
+        toggleBetweenTwoClasses(searchBar,'scale-0','scale-100');
+        stockSearchBar.focus()
+        hideBothCards();
+        stockSearchBar.value = ''
+        toggleBetweenTwoClasses(searchIcon, 'block','hidden');
+    }
+})
 overlay.addEventListener('click',()=>{
     toggleBetweenTwoClasses(overlay, 'flex','hidden');
     toggleBetweenTwoClasses(searchBar,'scale-0','scale-100');
@@ -27,14 +44,14 @@ overlay.addEventListener('click',()=>{
 // -----------------------------------FETCHING--------------------------------------
 
 // these are the four sections of the card
+const stockIPO = document.getElementById('stockIPO')
 const stockImage = document.getElementById('stockImage')
+const stockLink = document.getElementById('stockLink')
 const stockSymbol = document.getElementById('stockSymbol')
 const stockCompany = document.getElementById('stockCompany')
 const stockPrice = document.getElementById('stockPrice')
 
-// these are two parts of search bar
-const stockSearchBtn = document.getElementById('stockSearchBtn')
-const stockSearchBar = document.getElementById('stockSearchBar')
+
 
 // these are two cards either stock found or not
 const stockInfoCard = document.getElementById('stockInfoCard')
@@ -122,8 +139,10 @@ function fetchStockDetails(){
                     hideLoader()
                     showcard(notFoundCard)
                 }else{
+                    stockIPO.textContent = new Date(data.ipo).toLocaleDateString()
                     stockImage.src = data.logo;
                     stockSymbol.textContent = data.ticker
+                    stockLink.href = data.weburl
                     stockCompany.textContent = data.name
                     stockImage.addEventListener('load',()=>{
                         hideLoader()

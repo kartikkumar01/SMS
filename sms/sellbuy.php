@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('include/login_required.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

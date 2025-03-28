@@ -4,9 +4,9 @@ session_start();
 //session are destroyed when user closes the browser or logs out
 //To check login , check session variable
 //To destory session user session_destroy()
+include('../include/response_function.php');
 ?>
 
-<?php include('../include/response_function.php'); ?>
 <?php 
 
 //Establish the connection with database

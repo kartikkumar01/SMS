@@ -1,10 +1,8 @@
-const signupForm = document.getElementById('signupForm');
+const deleteForm = document.getElementById('deleteForm')
 const clientErrMsgBox = document.getElementById('clientValidationError')
-const fullname = document.getElementById('fullname')
 const username = document.getElementById('username')
 const password = document.getElementById('password')
-const confirmPassword = document.getElementById('confirmPassword')
-const signupOverlay = document.getElementById('signupOverlay')
+const deleteOverlay = document.getElementById('deleteOverlay')
 const trueMsgBox = document.getElementById('trueMessageBox')
 const falseMsgbox = document.getElementById('falseMessageBox')
 
@@ -12,10 +10,10 @@ const falseMsgbox = document.getElementById('falseMessageBox')
 let flag = false
 
 //These two event listeners are to clear the error message if user types again
-signupForm.addEventListener('input', () => showClientMessage(''))
+deleteForm.addEventListener('input', () => showClientMessage(''))
 
 //Listens the form submit event
-signupForm.addEventListener('submit',(e) => {
+deleteForm.addEventListener('submit',(e) => {
     e.preventDefault() 
     clientSideValidation() //Make the flag true if everything is fine
     if(flag == true) ajaxReq()
@@ -23,24 +21,16 @@ signupForm.addEventListener('submit',(e) => {
 
 function clientSideValidation(){
     flag = false;
-    if (fullname.value == '') {
-        showClientMessage('Full name is empty');
-    } else if (fullname.value.search(/[^a-zA-Z\s]/g) != -1) {
-        showClientMessage('Full name can only contain letters');
-    } else if (username.value == '') {
+    if (username.value == '') {
         showClientMessage('Username is empty');
     } else if (password.value == '') {
         showClientMessage('Password is empty');
-    } else if (confirmPassword.value == '') {
-        showClientMessage('Please confirm the password');
-    } else if (password.value != confirmPassword.value) {
-        showClientMessage('Passwords do not match');
-    } else {
+    }else {
         flag = true;
         showClientMessage(''); // Clear error if everything is valid
     }
-    
 }
+
 function showClientMessage(message){
     clientErrMsgBox.textContent = message
 }
@@ -62,21 +52,24 @@ function showServerMessage(status,message){
 }
 
 function ajaxReq(){
-const formdata = new FormData(signupForm)
+const formdata = new FormData(deleteForm)
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function (){
-    signupOverlay.style.display = 'block'
+    deleteOverlay.style.display = 'block'
     showLoader()
     if(xhr.readyState == xhr.DONE && xhr.status == 200){
-        signupOverlay.style.display = 'none'
+        deleteOverlay.style.display = 'none'
         hideLoader()
         const response = JSON.parse(xhr.responseText)
-        if(response.status == true){
-            signupForm.reset()
-        }
         showServerMessage(response.status, response.message)
+        if(response.status == true){
+            //Redirecting the user after account is deleted
+            setTimeout(() => {
+                window.location.href = 'index.php';
+            }, 2000);
+        }
     }
 }
-xhr.open('POST', './api/signup_submit.php');
+xhr.open('POST', './api/delete_submit.php');
 xhr.send(formdata);
 }
