@@ -11,6 +11,7 @@ include('include/redirect_if_login.php');
 
     <!-- CONTAINS ALL THE NECESSARY LINKS -->
     <?php include('include/head-links.php'); ?>
+    <script src="js/stockSearchFeature.js" defer></script>
 
 </head>
 

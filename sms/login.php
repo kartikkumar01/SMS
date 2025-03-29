@@ -7,6 +7,7 @@ include('include/redirect_if_login.php');
 <head>
     <title>SMS - Login</title>
     <?php include("include/head-links.php"); ?>
+    <script src="js/stockSearchFeature.js" defer></script>
     <link rel="stylesheet" href="css/form.css">
     <script src="js/showHidePassword.js" defer></script>
     <script src="js/login.js" defer></script>
