@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$id = $_SESSION['user_id'];
 include('../include/response_function.php');
 ?>
 
@@ -24,7 +25,7 @@ if($_POST['password'] == ''){
 }
 
 //Check if the user exists or not [Identification]
-$fetchQuery = "SELECT * FROM user WHERE username = '$username'";
+$fetchQuery = "SELECT * FROM user WHERE username = '$username';";
 try{
     $table = mysqli_query($con,$fetchQuery);
 }catch(Exception $e){
@@ -44,15 +45,21 @@ if($password != $row['password']){
 }
 
 //Finally delete the account
-$user_id = $_SESSION['user_id'];
-$delete_query = "DELETE FROM user WHERE id = '$user_id'";
+//delete portfolio
+$delete_portfolio = "DELETE FROM portfolio WHERE user_id = $id;";
+//delete transaction
+$delete_transaction = "DELETE FROM transaction WHERE user_id = $id;";
+//delete user
+$delete_user = "DELETE FROM user WHERE id = $id;";
 try{
-   mysqli_query($con,$delete_query);
+   mysqli_query($con,$delete_portfolio);
+   mysqli_query($con,$delete_transaction);
+   mysqli_query($con,$delete_user);
    session_destroy();
-   echo response(true,'User account deleted');
+   echo response(true,'Account deleted');
+   exit;
 }catch(Exception $e){
-    echo response(false,'Delete Failed !');
+    echo response(false,"Error while Deleting !!");
     exit;
 }
-
 ?>

@@ -130,7 +130,7 @@ function fetchStockDetails(){
             showcard(notFoundCard)
         }
         else{
-            stockPrice.textContent = data.c
+            stockPrice.textContent = (data.c).toFixed(2)
             fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${apiKey}`)
             .then((response) => response.json())
             .then((data)=>{

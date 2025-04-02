@@ -1,2 +1,2 @@
-<div id="trueMessageBox" class="fixed bottom-0 left-0 right-0 p-1 sm:p-3 bg-green-400 text-black text-center hidden"></div>
-<div id="falseMessageBox" class="fixed bottom-0 left-0 right-0 p-1 sm:p-3 bg-red-400 text-black text-center hidden"></div>
+<div id="trueMessageBox" class="z-50 fixed bottom-0 left-0 right-0 p-1 sm:p-3 bg-green-400 text-black text-center hidden"></div>
+<div id="falseMessageBox" class="z-50 fixed bottom-0 left-0 right-0 p-1 sm:p-3 bg-red-400 text-black text-center hidden"></div>
