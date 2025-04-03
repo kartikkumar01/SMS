@@ -1,14 +1,21 @@
 // --------------Fetching balance and displaying it on the page-------------------
-const balance = document.getElementById('balance')
+//This balance will be shown on screen
+const balance1 = document.getElementById('balance1')
+//This balance will be shown on card
+const balance2 = document.getElementById('balance2')
 const xhr1 = new XMLHttpRequest()
 xhr1.onreadystatechange = () => {
     if(xhr1.readyState == xhr1.DONE && xhr1.status == 200){
         const response = JSON.parse(xhr1.responseText)
         if(response.status == true){
-            const balanceResponse = Number(response.message).toLocaleString() //convert the balance in comman separated values
-            balance.textContent = `$${balanceResponse}`
+            //convert the balance in comman separated values
+            const balanceResponse = Number(response.message).toLocaleString()
+            //displaying the balances
+            balance1.textContent = `$${balanceResponse}`
+            balance2.textContent = `$${balanceResponse}`
         }else{
-            balance.textContent = `- - - - -`
+            balance1.textContent = `- - - - -`
+            balance2.textContent = `- - - - -`
         }
     }
 }
@@ -17,7 +24,9 @@ xhr1.send()
 
 
 // --------------Search API-------------------
-const quantityCard = document.getElementById('quantityCard')
+//This element is the quantity in the card
+const quantityInCard = document.getElementById('quantityInCard')
+
 const apiKey = 'cvijhvhr01qks9qat1u0cvijhvhr01qks9qat1ug';
 let symbol;
 let flag = false
@@ -137,7 +146,7 @@ function fetchStockDetails(){
                         hideLoader()
                         hideBothCards()
                         showcard(stockInfoCard)
-                        quantityCard.focus()
+                        quantityInCard.focus()
                     });
                 }
             })
@@ -146,13 +155,14 @@ function fetchStockDetails(){
 }
 
 
-//Buy Feature
+//==================Buy Feature====================
 const buyCardBtn = document.getElementById('buyCardBtn')
 const buyForm = document.getElementById('buyForm')
-// const quantityCard = document.getElementById('quantityCard')
+// const quantityInCard = document.getElementById('quantityInCard')
 const cardValidationMessage = document.getElementById('cardValidationMessage')
 const totalAmount = document.getElementById('totalAmount')
 
+//These will be used for messages from the server
 const trueMsgbox = document.getElementById('trueMessageBox')
 const falseMsgbox = document.getElementById('falseMessageBox')
 
@@ -160,20 +170,22 @@ function quantityValidationMessage(message){
     cardValidationMessage.textContent = message
 }
 
-quantityCard.addEventListener('input', ()=>{
+quantityInCard.addEventListener('input', ()=>{
+    //removing any validation message
     quantityValidationMessage('')
-    totalAmount.innerText = (Number(quantityCard.value) * Number(stockPrice.innerText)).toFixed(2)
+    //showing the total amount which is quantity + curr price
+    totalAmount.innerText = (Number(quantityInCard.value) * Number(stockPrice.innerText)).toFixed(2)
 })
 
 buyForm.addEventListener('submit',(e)=>{
     e.preventDefault()
     //checking for empty and -ve quantity
-    if(quantityCard.value == ''){
+    if(quantityInCard.value == ''){
         quantityValidationMessage('Enter Quantity !')
     }else{
-        let quantity = Number(quantityCard.value)
-        if(quantity < 1 || quantity > 10){
-            quantityValidationMessage('Quantity must be 1 - 10')
+        let quantity = Number(quantityInCard.value)
+        if(quantity < 1){
+            quantityValidationMessage('Quantity must be > 0')
         }else{
             let buySymbol = stockSymbol.innerText
             let currPrice = Number(stockPrice.innerText)
@@ -208,9 +220,188 @@ function buyAjaxReq(symbol, currPrice, quantity){
         if(xhr.readyState == xhr.DONE && xhr.status == 200){
             const response = JSON.parse(xhr.responseText)
             showServerMessage(response.status, response.message)
+            if(response.status == true){
+                setTimeout(() => {
+                    window.location.reload()
+                }, 800);
+            }
         }
     }
     xhr.open('POST', 'api/buy_api.php')
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(`symbol=${symbol}&currPrice=${currPrice}&quantity=${quantity}`)
 }
+
+//====================Fetch and display holdings to sell Feature============================
+
+const sellContainer = document.getElementById('sellContainer')
+
+fetchStocksAjaxReq()
+
+function fetchStocksAjaxReq(){
+    const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState == xhr.DONE && xhr.status == 200){
+            const response = JSON.parse(xhr.responseText)
+            if(response.status == false){
+                sellContainer.innerText = response.message
+            }else{
+                //response.message here is object of {symbol : quantity} coming from server
+                displayStocks(response.message)
+            }
+        }
+    }
+    xhr.open('GET', 'api/fetch_user_stocks.php')
+    xhr.send()
+}
+
+
+function displayStocks(stockList){
+    function element(symbol, quantity){
+        return (
+        `
+        <div class="row flex items-center justify-between border-y px-3 sm:px-8 py-1">
+            <div class="font-medium">${symbol}</div>
+            <div class="flex row items-center gap-5 md:gap-20">
+               <div class="font-medium">${quantity}</div>
+               <button class="sellBtn make-btn bg-red-600 text-white">Sell</button>
+            </div>
+        </div>
+        `
+        )
+    }
+    for (const symbol in stockList) {
+        sellContainer.innerHTML += element(symbol, stockList[symbol])
+    }
+}
+
+//====================Sell Feature============================
+// Because my buttons are added dynamically thats why js cannot fetch them, there is another way
+// const buttons = document.querySelectorAll('.sellBtn')
+
+const sellCard = document.getElementById('sellCard')
+const sellCardSymbol = document.getElementById('sellCardSymbol')
+const sellCardCurrPrice = document.getElementById('sellCardCurrPrice')
+const sellCardPurPrice = document.getElementById('sellCardPurPrice')
+const sellCardQuantity = document.getElementById('SellCardQuantity')
+const sellForm = document.getElementById('sellForm')
+const sellCardQuantityInput = document.getElementById('sellCardQuantityInput')
+const sellCardTotalAmount = document.getElementById('sellCardTotalAmount')
+const sellCardMsg = document.getElementById('sellCardValidationMessage')
+
+const sellOverlay = document.getElementById('sellOverlay')
+
+
+//Checking if I am clicking on sell button
+document.addEventListener('click',(e) => {
+    if(e.target.classList.contains('sellBtn')){
+        const sym = e.target.parentElement.previousElementSibling.innerText
+        const qty = e.target.previousElementSibling.innerText
+        sellCardSymbol.innerText = sym
+        sellCardQuantity.innerText = qty
+        fetchPurPrice(sym)
+        fetchCurrPrice(sym)
+        sellCardQuantityInput.focus()
+    }
+})
+
+
+function fetchCurrPrice(symbol){
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`)
+    .then((response) => response.json())
+    .then((data)=>{
+        if(Object.keys(data).length == 0 || Object.keys(data).length == 1 || data.c == 0){
+            sellCardCurrPrice.innerText = '- -'
+            showSellCard()
+            showSellOverlay()
+        }
+        else{
+            const curPrice = Number(data.c).toFixed(2)
+            sellCardCurrPrice.innerText = curPrice
+            showSellCard()
+            showSellOverlay()
+        }
+    })
+}
+
+function fetchPurPrice(symbol){
+    const xhr = new XMLHttpRequest()
+
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState == xhr.DONE && xhr.status == 200){
+            const response = JSON.parse(xhr.responseText)
+            sellCardPurPrice.innerText = Number(response.message).toFixed(2)
+        }
+    }
+    xhr.open('POST', 'api/fetch_purchased_price.php')
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    xhr.send(`symbol=${symbol}`)
+}
+
+function showSellCard(){
+    sellCard.style.scale = "1"
+}
+
+function hideSellCard(){
+    sellCard.style.scale = "0"
+}
+
+function showSellOverlay(){
+    sellOverlay.style.display = "block"
+}
+
+function hideSellOverlay(){
+    sellOverlay.style.display = "none"
+}
+function sellCardValidationMsg(message){
+    sellCardMsg.textContent = message
+}
+
+sellOverlay.addEventListener('click',()=>{
+    hideSellOverlay()
+    hideSellCard()
+})
+sellCardQuantityInput.addEventListener('input', () =>{
+    sellCardValidationMsg('')
+    sellCardTotalAmount.innerText = (Number(sellCardQuantityInput.value) * Number(sellCardCurrPrice.innerText)).toFixed(2)
+})
+
+sellForm.addEventListener('submit',(e) => {
+    e.preventDefault()
+    const availabeQty = Number(sellCardQuantity.innerText)
+    //checking for empty and -ve quantity
+    if(sellCardQuantityInput.value == ''){
+        sellCardValidationMsg('Enter Quantity !')
+    }else{
+        let inputQuantity = Number(sellCardQuantityInput.value)
+        if(inputQuantity < 1 || inputQuantity > availabeQty){
+            sellCardValidationMsg('Invalid Quantity !')
+        }else{
+            let sellSymbol = sellCardSymbol.innerText
+            let currPrice= Number(sellCardCurrPrice.innerText)
+            let sellQuantity = Number(sellCardQuantityInput.value)
+            sellAjaxReq(sellSymbol,currPrice,sellQuantity)
+        }
+    }
+})
+
+function sellAjaxReq(symbol, currPrice, quantity){
+    const xhr = new XMLHttpRequest()
+    
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState == xhr.DONE && xhr.status == 200){
+            const response = JSON.parse(xhr.responseText)
+            showServerMessage(response.status, response.message)
+            if(response.status == true){
+                setTimeout(() => {
+                    window.location.reload()
+                }, 800);
+            }
+            console.log(response)
+        }
+    }
+    xhr.open('POST', 'api/sell_api.php')
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    xhr.send(`symbol=${symbol}&currPrice=${currPrice}&quantity=${quantity}`)
+}
+

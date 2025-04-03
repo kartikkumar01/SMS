@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('../include/connect_db.php');
 include('../include/response_function.php');
+include('../include/connect_db.php');
 $id = $_SESSION['user_id'];
 $fetch_balance_query = "SELECT * FROM user WHERE id = $id;";
 try{

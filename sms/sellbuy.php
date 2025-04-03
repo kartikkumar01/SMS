@@ -12,32 +12,38 @@ include('include/login_required.php');
 <body class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
     <?php include("include/header.php"); ?>
     <?php include('include/messageBoxes.php'); ?>
+
     <!-- Loader which appears while fetching the data from the finnhub api -->
    <div id="loader" class="z-[500] loader fixed top-[50%] left-[50%] translate-[-50%]"></div>
+
     <main>
-       <h1 class="px-2 text-center md:text-5xl text-2xl my-5 font-bold">Sell Or Buy any stock <i class="text-green-500 fa-solid fa-money-bill-transfer"></i></h1>
-       <p class="rounded py-3 text-center w-[95%] mx-auto my-3 max-w-[300px] "><span class="font-semibold">Your Balance</span> : <span id="balance"></span></p>
-       <button id="searchStockBtn" type="button" class="make-btn bg-primary-dark text-white m-auto block">Search Stock</button>
+       <h1 class="px-2 text-center md:text-5xl text-2xl my-5 font-bold">Buy or Sell any stock <i class="text-green-500 fa-solid fa-money-bill-transfer"></i></h1>
+       <p class="rounded py-3 text-center w-[95%] mx-auto my-3 max-w-[300px] "><span class="font-semibold">Your Balance</span> : <span id="balance1"></span></p>
+       <button id="searchStockBtn" type="button" class="make-btn bg-green-600 text-white m-auto block">Buy Stock</button>
 
       <div id="searchOverlay" class="hidden fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs"></div>
 
-      <form id="searchForm" class="scale-0 border duration-500 transition-all pr-2 rounded-full flex fixed z-50 top-[20%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+      <form id="searchForm" class="scale-0 border duration-500 transition-all pr-2 rounded-full flex fixed z-50 top-[5%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
          <input id="searchBar" autocomplete="off" autofocus placeholder="Search Ex- AAPL" class="rounded-full outline-none py-2 w-[200px] text-center">
          <button class="cursor-pointer"><i class="fa-solid fa-search"></i></button>
-         <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-100%] left-[5%] text-sm"></p>
+         <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-65%] left-[5%] text-sm"></p>
       </form>
 
          <!-- popup if found-->         
-         <div id="stockInfoCard" class="scale-0 transition-all flex shadow-box-light dark:shadow-box-dark w-[70%] max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[35%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+         <div id="stockInfoCard" class="scale-0 transition-all flex shadow-box-light dark:shadow-box-dark w-[70%] max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[15%] md:top-[25%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+            <p class="text-xs md:text-sm rounded text-center w-[95%] mx-auto max-w-[300px] "><span class="font-semibold">Your Balance</span> : <span id="balance2"></span></p>
             <img id="stockImage" src="" alt="stock image" class="rounded-full block w-[50%] m-auto" >
             <p id="stockSymbol" class="text-center"></p>
-            <p class="text-center font-bold">$<span  id="stockPrice"></span></p>
+            <p class="text-center font-bold">Curr : $<span  id="stockPrice"></span></p>
+
             <form id="buyForm">
-               <input id="quantityCard" type="number" placeholder="Quantity" class="w-full text-center border">
+               <input id="quantityInCard" type="number" placeholder="Quantity" class="w-full text-center border">
                <p class="text-center">Total : $<span id="totalAmount">0.00</span></p>
+               <!-- BUY BUTTON -->
                <button id="buyCardBtn" type="submit" class="bg-green-600 text-white make-btn mx-auto block my-3">Buy</button>
             </form>
-            <p id="cardValidationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-10%] left-[5%] text-sm"></p>
+            <!-- This is for displaying error messages -->
+            <p id="cardValidationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-5%] left-[50%] translate-x-[-50%] w-max text-center text-sm md:text-lg"></p>
          </div>
 
          <!-- popup if NOT found-->
@@ -45,50 +51,28 @@ include('include/login_required.php');
             <p>No Stock Found!!</p>
          </div>
 
-         <h2 class="font-bold text-center mt-10 mb-5">Buy/Sell From your Holdings</h2>
-         <div class="w-[95%] max-w-[600px] m-auto">
-            <!-- individual row -->
-            <!-- <div class="row flex items-center justify-between border-y px-3 sm:px-8 py-1">
-                 <div class="font-medium">AAPL</div>
-                 <div>
-                    <button class="make-btn bg-green-600 text-white">Buy</button>
-                    <button class="make-btn bg-red-600 text-white">Sell</button>
-                  </div>
-            </div>
-            <div class="row flex items-center justify-between border-y px-3 sm:px-8 py-1">
-                 <div class="font-medium">TESL</div>
-                 <div>
-                    <button class="make-btn bg-green-600 text-white">Buy</button>
-                    <button class="make-btn bg-red-600 text-white">Sell</button>
-                  </div>
-            </div>
-            <div class="row flex items-center justify-between border-y px-3 sm:px-8 py-1">
-                 <div class="font-medium">ALPHABET</div>
-                 <div>
-                    <button class="make-btn bg-green-600 text-white">Buy</button>
-                    <button class="make-btn bg-red-600 text-white">Sell</button>
-                  </div>
-            </div>
-            <div class="row flex items-center justify-between border-y px-3 sm:px-8 py-1">
-                 <div class="font-medium">FORD</div>
-                 <div>
-                    <button class="make-btn bg-green-600 text-white">Buy</button>
-                    <button class="make-btn bg-red-600 text-white">Sell</button>
-                  </div>
-            </div> -->
+         <h2 class="text-2xl md:text-4xl font-bold text-center mt-10 mb-5 px-3">Sell From your Holdings</h2>
+         <div id="sellContainer" class="w-[95%] max-w-[600px] m-auto text-center">
+            <!-- Stocks list will come over here through Javascript -->
          </div>
 
          <!-- popup if user clicks on sell -->
-         <div class=" hidden border w-[95%] m-auto max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm">
-            <i class="fa-solid fa-window-close ml-auto"></i>
-            <p>AAPL</p>
-            <p>Apple co.in</p>
-            <p>Curr : $150.44</p>
-            <p>Pur : $123.76</p>
-            <p>Available : 5</p>
-            <input type="number" placeholder="Quantity" class="w-full text-center border">
-            <button type="button" class="bg-red-600 text-white make-btn">Sell</button>
+         <div id="sellCard" class="z-50 scale-0 transition-all flex shadow-box-light dark:shadow-box-dark w-[70%] max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[15%] md:top-[25%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+            <p id="sellCardSymbol" class="font-bold text-center"></p>
+            <p class="text-center">Curr : $<span  id="sellCardCurrPrice">150</span></p>
+            <!-- Here purchase price will be the average of total amount invested / no of stocks purchased -->
+            <p class="text-center">Pur : $<span  id="sellCardPurPrice">160</span></p>
+            <p class="text-center">Quantity : <span  id="SellCardQuantity"></span></p>
+            <form id="sellForm">
+               <input id="sellCardQuantityInput" type="number" placeholder="Sell Quantity" class="w-full text-center border">
+               <p class="text-center">Total : $<span id="sellCardTotalAmount">0.00</span></p>
+               <button id="sellCardBtn" type="submit" class="bg-red-600 text-white make-btn mx-auto block my-3">Sell</button>
+            </form>
+            <p id="sellCardValidationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-5%] left-[50%] translate-x-[-50%] w-max text-center text-sm md:text-lg"></p>
          </div>
+         <div id="sellOverlay" class="hidden fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs"></div>
+
+
     </main>
     <?php include("include/footer.php"); ?>
 </body>

@@ -24,7 +24,7 @@ if($_POST['quantity'] == ''){
 }else{
     $quantity = (int) $_POST['quantity'];
 }
-$totalAmount = $price * $quantity;
+$transactionAmount = $price * $quantity;
 
 
 //Fetching the balance
@@ -41,14 +41,13 @@ try{
 
 
 //Checking if user has sufficient balance
-if($totalAmount > $balance){
+if($transactionAmount > $balance){
     echo response(false, 'Insufficient Balance !!');
     exit;
 }
 
 //deduct the balance
-$remainingBalance = $balance - $totalAmount;
-$deduct_balance_query = "UPDATE user SET balance = $remainingBalance WHERE id = $id;";
+$deduct_balance_query = "UPDATE user SET balance = balance - $transactionAmount WHERE id = $id;";
 try{
     mysqli_query($con,$deduct_balance_query);
 }catch(Exception $e){
@@ -58,7 +57,7 @@ try{
 
 
 //add the transaction
-$transaction_query = "INSERT INTO transaction (user_id, symbol, transaction_type, price_per_share, quantity, transaction_amount) VALUES ($id,'$symbol','Buy', $price, $quantity, $totalAmount);";
+$transaction_query = "INSERT INTO transaction (user_id, symbol, transaction_type, price_per_share, quantity, transaction_amount) VALUES ($id,'$symbol','Buy', $price, $quantity, $transactionAmount);";
 try{
     mysqli_query($con,$transaction_query);
 }catch(Exception $e){
@@ -78,7 +77,7 @@ try{
 
 if($no_of_rows == 0){
     //First time query
-    $portfolio_query1 = "INSERT INTO portfolio (user_id, symbol, quantity, invested_amount) VALUES ($id, '$symbol', $quantity, $totalAmount);";
+    $portfolio_query1 = "INSERT INTO portfolio (user_id, symbol, quantity, invested_amount) VALUES ($id, '$symbol', $quantity, $transactionAmount);";
     try{
         mysqli_query($con, $portfolio_query1);
     }catch(Exception $e){
@@ -87,7 +86,7 @@ if($no_of_rows == 0){
     }
 }else{
     //other time query
-    $portfolio_query2 = "UPDATE portfolio SET quantity = quantity + $quantity, invested_amount = invested_amount + $totalAmount WHERE user_id = $id;";
+    $portfolio_query2 = "UPDATE portfolio SET quantity = quantity + $quantity, invested_amount = invested_amount + $transactionAmount WHERE user_id = $id;";
     try{
         mysqli_query($con, $portfolio_query2);
     }catch(Exception $e){
@@ -96,5 +95,5 @@ if($no_of_rows == 0){
     }
 }
 
-echo response(true, 'Stock Purchased Sucessfull');
+echo response(true, 'Stock Purchased Sucessfully');
 ?>

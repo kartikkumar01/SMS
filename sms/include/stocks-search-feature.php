@@ -1,5 +1,5 @@
 <!-- Search bar which appears when user clicks on bottom right search btn -->
-<div id="searchBar" class="border duration-500 transition-all pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed z-50 top-[20%] left-[50%] translate-x-[-50%] flex scale-0 ">
+<div id="searchBar" class="border duration-500 transition-all pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed z-50 top-[5%] left-[50%] translate-x-[-50%] flex scale-0 ">
     <input id="stockSearchBar" type="text" class="rounded-full outline-none py-2 w-[200px] text-center" placeholder="Ex - AAPL">
     <button id="stockSearchBtn" class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
     <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-100%] left-[5%] text-sm"></p>
@@ -16,7 +16,7 @@
 </div> 
 
  <!-- Popup if stock found -->
-<div id="stockInfoCard" class="transition-all scale-0 flex shadow-box-light dark:shadow-box-dark w-[70%] max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[35%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+<div id="stockInfoCard" class="transition-all scale-0 flex shadow-box-light dark:shadow-box-dark w-[70%] max-w-[250px] flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[20%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
     <p class="text-center text-[16px]">IPO : <span id="stockIPO"></span></p>
     <img id="stockImage" src="" alt="stock image" class="rounded-full block w-[50%] m-auto" >
     <p id="stockSymbol" class="text-center"></p>
@@ -25,6 +25,6 @@
 </div>
 
 <!-- Popup if stock not found -->
-<div id="notFoundCard" class="shadow-box-light dark:shadow-box-dark transition-all scale-0 text-center w-[150px] flex flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[35%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+<div id="notFoundCard" class="shadow-box-light dark:shadow-box-dark transition-all scale-0 text-center w-[150px] flex flex-col items-center justify-center gap-2 p-4 rounded-sm fixed top-[20%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
     <p>No Stock Found!!</p>
 </div>
