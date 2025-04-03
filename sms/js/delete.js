@@ -66,7 +66,7 @@ xhr.onreadystatechange = function (){
             //Redirecting the user after account is deleted
             setTimeout(() => {
                 window.location.href = 'index.php';
-            }, 2000);
+            }, 800);
         }
     }
 }

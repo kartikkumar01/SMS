@@ -50,7 +50,6 @@
     --color-primary-light: #3F5BD9;
     --color-bg-dark: #000;
     --color-text-dark: rgb(230, 230, 230);
-    --color-primary-dark: #3F5BD9;
     --color-secondary-dark: #021526;
     --color-hsecondary-dark: #101218;
     --color-link: #4189d5;
@@ -225,26 +224,11 @@
   .top-\[-5\%\] {
     top: -5%;
   }
-  .top-\[-10\%\] {
-    top: -10%;
-  }
-  .top-\[-50\%\] {
-    top: -50%;
-  }
   .top-\[-65\%\] {
     top: -65%;
   }
-  .top-\[-70\%\] {
-    top: -70%;
-  }
-  .top-\[-80\%\] {
-    top: -80%;
-  }
   .top-\[-100\%\] {
     top: -100%;
-  }
-  .top-\[0\%\] {
-    top: 0%;
   }
   .top-\[5\%\] {
     top: 5%;
@@ -327,9 +311,6 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
-  .ml-auto {
-    margin-left: auto;
-  }
   .block {
     display: block;
   }
@@ -338,9 +319,6 @@
   }
   .hidden {
     display: none;
-  }
-  .table {
-    display: table;
   }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
@@ -408,9 +386,6 @@
   .max-w-\[800px\] {
     max-width: 800px;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .translate-\[-50\%\] {
     --tw-translate-x: -50%;
     --tw-translate-y: -50%;
@@ -435,14 +410,8 @@
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
-  }
   .flex-col {
     flex-direction: column;
-  }
-  .content-center {
-    align-content: center;
   }
   .items-center {
     align-items: center;
@@ -527,14 +496,8 @@
   .bg-green-400 {
     background-color: var(--color-green-400);
   }
-  .bg-green-500 {
-    background-color: var(--color-green-500);
-  }
   .bg-green-600 {
     background-color: var(--color-green-600);
-  }
-  .bg-primary-dark {
-    background-color: var(--color-primary-dark);
   }
   .bg-red-400 {
     background-color: var(--color-red-400);
@@ -559,9 +522,6 @@
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
-  }
-  .px-1 {
-    padding-inline: calc(var(--spacing) * 1);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -595,9 +555,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .text-left {
-    text-align: left;
   }
   .text-right {
     text-align: right;
@@ -693,6 +650,9 @@
   .text-red-400 {
     color: var(--color-red-400);
   }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
   .text-red-700 {
     color: var(--color-red-700);
   }
@@ -716,19 +676,11 @@
   .shadow-gray-700 {
     --tw-shadow-color: var(--color-gray-700);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .outline-primary-light {
     outline-color: var(--color-primary-light);
   }
   .backdrop-blur-xs {
     --tw-backdrop-blur: blur(var(--blur-xs));
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .backdrop-filter {
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
@@ -867,11 +819,6 @@
       line-height: 96px;
     }
   }
-  .md\:top-\[20\%\] {
-    @media (width >= 48rem) {
-      top: 20%;
-    }
-  }
   .md\:top-\[25\%\] {
     @media (width >= 48rem) {
       top: 25%;
@@ -910,6 +857,11 @@
   .md\:inline {
     @media (width >= 48rem) {
       display: inline;
+    }
+  }
+  .md\:table-cell {
+    @media (width >= 48rem) {
+      display: table-cell;
     }
   }
   .md\:max-w-\[250px\] {
@@ -1154,11 +1106,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-backdrop-blur {
   syntax: "*";
   inherits: false;
@@ -1198,4 +1145,9 @@
 @property --tw-duration {
   syntax: "*";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }

@@ -66,7 +66,7 @@ xhr.onreadystatechange = function (){
             //Redirecting the user after sucessfull login
             setTimeout(() => {
                 window.location.href = './portfolio.php';
-            }, 1000);
+            }, 800);
         }
     }
 }
