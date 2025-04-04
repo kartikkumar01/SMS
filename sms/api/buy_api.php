@@ -86,7 +86,7 @@ if($no_of_rows == 0){
     }
 }else{
     //other time query
-    $portfolio_query2 = "UPDATE portfolio SET quantity = quantity + $quantity, invested_amount = invested_amount + $transactionAmount WHERE user_id = $id;";
+    $portfolio_query2 = "UPDATE portfolio SET quantity = quantity + $quantity, invested_amount = invested_amount + $transactionAmount WHERE user_id = $id AND symbol = '$symbol';";
     try{
         mysqli_query($con, $portfolio_query2);
     }catch(Exception $e){

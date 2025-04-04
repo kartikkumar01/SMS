@@ -49,6 +49,7 @@ if($password != $row['password']){
 
 //Store data in session variable
 $_SESSION['user_id'] = $row['id'];
+$_SESSION['fullname'] = $row['fullname'];
 
 echo response(true,'Logged in');
 ?>

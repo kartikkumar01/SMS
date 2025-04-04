@@ -5,23 +5,23 @@ include('../include/response_function.php');
 include('../include/connect_db.php');
 
 //fetch the transactions
-$fetch_stocks_query = "SELECT * FROM transaction WHERE user_id = $id";
+$fetch_portfolio_query = "SELECT symbol, quantity, invested_amount FROM portfolio WHERE user_id = $id";
 try{
-    $table = mysqli_query($con, $fetch_stocks_query);
+    $table = mysqli_query($con, $fetch_portfolio_query);
     $no_of_rows = mysqli_num_rows($table);
     if($no_of_rows == 0){
-        echo response(false, "You don't have any transactions.");
+        echo response(false, "Your Portfolio is Empty.");
         exit;
     }else{
         //This will contain associative arrays of transaction list
-        $stocksList = array();
+        $portfolioList = array();
 
         $row = mysqli_fetch_assoc($table);
         while($row){
-            array_push($stocksList, $row);
+            array_push($portfolioList, $row);
             $row = mysqli_fetch_assoc($table);
         }
-        echo response(true , $stocksList);
+        echo response(true , $portfolioList);
         exit;
     }
 }catch(Exception $e){
