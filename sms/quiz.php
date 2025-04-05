@@ -22,7 +22,7 @@ session_start();
     <main class="w-[93%] md:w-[70%] mx-auto">
 
     <h1 class="text-3xl md:text-4xl font-bold text-center my-8">Check Your knowledge</h1>
-    <div class="w-[98%] max-w-[800px] mx-auto bg-gray-800 p-6 rounded-2xl shadow-lg">
+    <div class="w-[98%] max-w-[800px] mx-auto bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
         <form id="quizForm" class="space-y-6">
             <h1 class="text-3xl font-bold mb-6 text-center">Stock Market Quiz</h1>
             <!-- Question 1 -->
@@ -59,10 +59,10 @@ session_start();
 
             <div id="result" class="mt-6 text-xl font-semibold text-center hidden"></div>
             <div class="flex justify-center gap-2">
-                <button type="button" onclick="checkAnswers()" class="bg-blue-600 hover:bg-blue-700 make-btn mt-4">
+                <button type="button" onclick="checkAnswers()" class="bg-lime-100 hover:bg-lime-200 border dark:bg-blue-600 dark:hover:bg-blue-700 make-btn mt-4">
                     Submit
                 </button>
-                <button type="button" onclick="reload()" class="bg-blue-600 hover:bg-blue-700 make-btn mt-4">
+                <button type="button" onclick="reload()" class="bg-lime-100 hover:bg-lime-200 border dark:bg-blue-600 dark:hover:bg-blue-700 make-btn mt-4">
                     Replay
                 </button>
             </div>
