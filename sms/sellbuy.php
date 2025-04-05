@@ -26,7 +26,7 @@ include('include/login_required.php');
       <form id="searchForm" class="scale-0 border duration-500 transition-all pr-4 rounded-full flex fixed z-50 top-[5%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
          <input id="searchBar" autocomplete="off" autofocus placeholder="Search Ex- AAPL" class="rounded-full outline-none py-2 w-[200px] text-center">
          <button class="cursor-pointer"><i class="fa-solid fa-search"></i></button>
-         <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-65%] left-[5%] text-sm"></p>
+         <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-60%] left-[5%] text-sm"></p>
       </form>
 
          <!-- popup if found-->         

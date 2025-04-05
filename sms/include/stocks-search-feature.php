@@ -2,7 +2,7 @@
 <div id="searchBar" class="border duration-500 transition-all pr-4 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed z-50 top-[5%] left-[50%] translate-x-[-50%] flex scale-0 ">
     <input id="stockSearchBar" type="text" class="py-2 rounded-full outline-none w-[200px] text-center" placeholder="Ex - AAPL">
     <button id="stockSearchBtn" class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
-    <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-100%] left-[5%] text-sm"></p>
+    <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-60%] left-[5%] text-sm"></p>
 </div>
 <div id="overlay" class="fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs hidden"></div>
 
