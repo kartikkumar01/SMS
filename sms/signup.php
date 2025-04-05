@@ -18,7 +18,7 @@ include('include/redirect_if_login.php');
 <main>
     <?php include('include/messageBoxes.php'); ?>
     <div id="signupOverlay" class="fixed bg-[#00000079] top-0 left-0 right-0 bottom-0 hidden"></div>
-    <form id="signupForm" class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
+    <form id="signupForm" class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg  max-w-[500px] mx-auto flex flex-col w-[90%] py-2 px-5 gap-6 md:px-7 ">
         <h1 class="text-center text-xl font-semibold my-3">Sign Up on SMS <i class="fa-solid fa-database"></i></h1>
         <input type="text" autofocus id="fullname" name="fullname" placeholder="Full Name" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">
         <input type="text" id="username" name="username" placeholder="username" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">

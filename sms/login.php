@@ -18,7 +18,7 @@ include('include/redirect_if_login.php');
     <main >
         <?php include('include/messageBoxes.php'); ?>
         <div id="loginOverlay" class="fixed bg-[#00000079] top-0 left-0 right-0 bottom-0 hidden"></div>
-        <form id="loginForm" class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
+        <form id="loginForm" class="w-[90%] py-2 px-5 shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg  max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
             <h1 class="text-center text-xl font-semibold my-5">Login Here <i class="fa-solid fa-sign-in"></i></h1>
             <input name="username" autofocus type="text" id="username" placeholder="username" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">
             <div class="border flex items-center pr-2 rounded-sm focus-within:outline-2 focus-within:border-transparent outline-primary-light">

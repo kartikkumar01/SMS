@@ -9,7 +9,7 @@ include('include/login_required.php');
     <?php include("include/head-links.php"); ?>
     <script src="js/transaction.js" defer></script>
 </head>
-<body class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
+<body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
     <main>
         <h1 class="font-bold text-2xl sm:text-3xl text-center my-5">Your Transactions</h1>

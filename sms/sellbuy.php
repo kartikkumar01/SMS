@@ -9,7 +9,7 @@ include('include/login_required.php');
     <?php include("include/head-links.php"); ?>
     <script src="js/sell_buy.js" defer></script>
 </head>
-<body class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
+<body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
     <?php include('include/messageBoxes.php'); ?>
 
@@ -23,7 +23,7 @@ include('include/login_required.php');
 
       <div id="searchOverlay" class="hidden fixed bg-[#00000075] top-0 left-0 right-0 bottom-0 backdrop-blur-xs"></div>
 
-      <form id="searchForm" class="scale-0 border duration-500 transition-all pr-2 rounded-full flex fixed z-50 top-[5%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
+      <form id="searchForm" class="scale-0 border duration-500 transition-all pr-4 rounded-full flex fixed z-50 top-[5%] left-[50%] translate-x-[-50%] bg-bg-light dark:bg-hsecondary-dark">
          <input id="searchBar" autocomplete="off" autofocus placeholder="Search Ex- AAPL" class="rounded-full outline-none py-2 w-[200px] text-center">
          <button class="cursor-pointer"><i class="fa-solid fa-search"></i></button>
          <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-65%] left-[5%] text-sm"></p>
@@ -52,7 +52,7 @@ include('include/login_required.php');
          </div>
 
          <h2 class="text-2xl md:text-4xl font-bold text-center mt-10 mb-5 px-3">Sell From your Holdings</h2>
-         <div id="sellContainer" class="w-[95%] max-w-[600px] m-auto text-center">
+         <div id="sellContainer" class="w-[85%] max-w-[600px] m-auto text-center">
             <!-- Stocks list will come over here through Javascript -->
          </div>
 

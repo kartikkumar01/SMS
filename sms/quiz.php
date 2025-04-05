@@ -14,10 +14,11 @@ session_start();
             }
         }
     </style>
+    <script src="js/stockSearchFeature.js" defer></script>
 </head>
 <body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
-    
+    <?php include('include/stocks-search-feature.php'); ?>
     <main class="w-[93%] md:w-[70%] mx-auto">
 
     <h1 class="text-3xl md:text-4xl font-bold text-center my-8">Check Your knowledge</h1>

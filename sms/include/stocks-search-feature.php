@@ -1,6 +1,6 @@
 <!-- Search bar which appears when user clicks on bottom right search btn -->
-<div id="searchBar" class="border duration-500 transition-all pr-2 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed z-50 top-[5%] left-[50%] translate-x-[-50%] flex scale-0 ">
-    <input id="stockSearchBar" type="text" class="rounded-full outline-none py-2 w-[200px] text-center" placeholder="Ex - AAPL">
+<div id="searchBar" class="border duration-500 transition-all pr-4 rounded-full  bg-bg-light dark:bg-hsecondary-dark fixed z-50 top-[5%] left-[50%] translate-x-[-50%] flex scale-0 ">
+    <input id="stockSearchBar" type="text" class="py-4 rounded-full outline-none w-[200px] text-center" placeholder="Ex - AAPL">
     <button id="stockSearchBtn" class="cursor-pointer md:hover:scale-115 transition"><i class="fa-solid fa-search"></i></button>
     <p id="validationMessage" class="rounded-sm text-white bg-red-600 absolute top-[-100%] left-[5%] text-sm"></p>
 </div>

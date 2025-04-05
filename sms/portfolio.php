@@ -9,7 +9,7 @@ include('include/login_required.php');
     <?php include('include/head-links.php') ?>
     <script src="js/portfolio.js" defer></script>
 </head>
-<body class="dark:bg-hsecondary-dark dark:text-text-dark sm:text-xl">
+<body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include('include/header.php') ?>
     <main>
         <p class="font-semibold text-4xl md:text-5xl text-center my-5 px-2">
@@ -21,7 +21,7 @@ include('include/login_required.php');
         <h1 class="font-semibold text-3xl text-center my-5">Your Portfolio</h1>
 
         <!-- box at top -->
-        <div class="border w-[95%] max-w-[500px] p-5 mx-auto my-5 rounded">
+        <div class="border w-[85%] max-w-[500px] p-5 mx-auto my-5 rounded">
             <div class="top flex justify-between sm:justify-around">
                 <div class="left">
                     <div>Invested</div>

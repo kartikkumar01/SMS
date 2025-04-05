@@ -18,7 +18,7 @@ include('include/login_required.php');
     <main >
         <?php include('include/messageBoxes.php'); ?>
         <div id="deleteOverlay" class="fixed bg-[#00000079] top-0 left-0 right-0 bottom-0 hidden"></div>
-        <form id="deleteForm" class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg w-[95%] max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
+        <form id="deleteForm" class="shadow-box-light dark:shadow-box-dark transition  mt-5 rounded-lg w-[90%] py-2 px-5 max-w-[500px] mx-auto flex flex-col p-2 gap-6 md:px-7 ">
             <h1 class="text-center text-xl font-semibold mt-5">Delete Your Account Permanantly <i class="fa-solid fa-trash"></i></h1>
             <p class="text-center text-red-700 dark:text-red-500 font-semibold mb-5">NOTE: This action is irreversible!!</p>
             <input id="username" autofocus name="username" type="text" placeholder="username" class="border rounded-sm focus:outline-2 focus:border-transparent outline-primary-light">
