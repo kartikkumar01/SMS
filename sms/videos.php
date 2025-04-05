@@ -7,11 +7,11 @@ session_start();
     <title>SMS - Learn Stock Market Videos</title>
     <?php include("include/head-links.php"); ?>
 </head>
-<body class="dark:bg-gray-900 dark:text-gray-200 text-gray-900 bg-gray-100">
+<body class="dark:bg-hsecondary-dark dark:text-text-dark text-text-light bg-bg-light text-body-desktop">
     <?php include("include/header.php"); ?>
     
     <main class="w-[93%] md:w-[70%] mx-auto">
-        <h1 class="text-4xl font-bold text-center my-8">Learn Stock Market - Video Tutorials</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-center my-8">Learn Stock Market - Video Tutorials</h1>
         
         <section class="bg-white dark:bg-gray-800 p-3 md:p-8  rounded-lg shadow-lg mb-8">
             <h2 class="text-3xl font-semibold mb-4">What is Compounding ?</h2>
