@@ -5,7 +5,7 @@
 
         <!-- This is left div for the logo -->
         <div class="flex items-center gap-5">
-            <a href="/sms/sms"><img id="logo" src="./img/logo.png" alt="sms logo" class="w-15"></a>
+            <a href="/"><img id="logo" src="./img/logo.png" alt="sms logo" class="w-15"></a>
         </div>
 
         <!-- This is the right side navigations -->
